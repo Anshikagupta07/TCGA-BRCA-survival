@@ -60,7 +60,7 @@ All data is sourced from the public TCGA repository via the `TCGAbiolinks` R pac
 
 ## Dataset
 
-- **Source:** The Cancer Genome Atlas (TCGA) — Breast Cancer (BRCA) cohort
+- **Source:** The Cancer Genome Atlas (TCGA) - Breast Cancer (BRCA) cohort
 - **Access:** Public, via `TCGAbiolinks` R/Bioconductor package
 - **Patients:** 1,035 after quality filtering (66 removed: missing survival time or OS_time ≤ 0)
 - **Events (deaths):** 103 (9.9% mortality in follow-up period)
@@ -134,7 +134,6 @@ R version 4.3+ recommended.
 ## Author
 
 **Anshika Gupta**  
-M.Sc. Bioinformatics and Genomics, Gautam Buddha University  
 [LinkedIn](https://www.linkedin.com/in/anshika-gupta-0162886280) · anshikaaggupta@gmail.com
 
 ---
