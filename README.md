@@ -1,4 +1,4 @@
-# Breast Cancer Survival Analysis — TCGA BRCA
+# Breast Cancer Survival Analysis - TCGA BRCA
 
 **Multivariate survival analysis of 1,035 breast cancer patients using clinical and receptor biomarker data from TCGA.**
 
@@ -25,13 +25,25 @@ All data is sourced from the public TCGA repository via the `TCGAbiolinks` R pac
 
 ### Interpretation
 
-- **Age** is the strongest independent predictor of mortality. Each standard deviation increase in age at diagnosis raises the hazard of death by 84% (HR=1.84, p<0.001), after controlling for stage and receptor status.
+- **Age** is a strong independent predictor of mortality. Each standard deviation increase in age at diagnosis raises the hazard of death by 84% (HR=1.84, p<0.001), after controlling for stage and receptor status.
 - **ER-positive status** is strongly protective. ER-positive patients have 54% lower hazard of death compared to ER-negative patients (HR=0.46, p=0.011). This reflects the availability of hormone-targeted therapies (e.g. tamoxifen) for ER-positive tumours.
 - **HER2-positive status** shows a trend toward worse survival (HR=1.82, p=0.064) but does not reach conventional significance in this cohort, likely because TCGA data predates widespread Herceptin (trastuzumab) use — the survival disadvantage of HER2+ disease is more muted in modern treated cohorts.
 - **Stage IV** disease shows a 3.46× hazard vs Stage I (p=0.059), with wide confidence intervals reflecting the small Stage IV sample (n=20). The log-rank test across all stages is highly significant (p=2×10⁻⁶).
 
 ---
+## Limitations
 
+* Median follow-up is 1.3 years, with ~90% of patients censored. Survival estimates at longer timepoints (e.g. >5,000 days) are based on very small risk sets (<10 patients per group) and should be interpreted cautiously.
+
+* The Stage IV cohort is small (n=20, 9 events), leading to wide confidence intervals and an imprecise hazard ratio estimate despite a large point estimate (HR = 3.46).
+
+* The apparent protective effect of Stage II disease (HR < 1) likely reflects TCGA cohort selection bias rather than a true biological effect.
+
+* TCGA clinical data lacks detailed treatment annotation (e.g. trastuzumab use), which may confound interpretation of HER2-associated survival differences.
+
+* The proportional hazards assumption was not formally tested. This should be evaluated using `cox.zph(cox_model)` to ensure model validity.
+
+---
 ## Figures
 
 | Figure | Description |
@@ -42,7 +54,7 @@ All data is sourced from the public TCGA repository via the `TCGAbiolinks` R pac
 | `04_km_by_stage.png` | Kaplan-Meier curves by cancer stage (log-rank p=2×10⁻⁶) |
 | `05_km_by_er_status.png` | Kaplan-Meier curves by ER status (log-rank p=0.02) |
 | `06_km_by_her2_status.png` | Kaplan-Meier curves by HER2 status (log-rank p=0.005) |
-| `07_cox_forest_plot.png` | Multivariate Cox model forest plot |
+| `forest_plot.png` | Multivariate Cox model forest plot |
 
 ---
 
