@@ -8,7 +8,7 @@
 
 This project applies Kaplan-Meier survival analysis and Cox proportional hazards modelling to the TCGA Breast Cancer (BRCA) cohort. The goal is to identify clinical and molecular features that independently predict patient survival outcomes.
 
-All data is sourced from the public TCGA repository via the `TCGAbiolinks` R package — no proprietary data is used.
+All data is sourced from the public TCGA repository via the `TCGAbiolinks` R package - no proprietary data is used.
 
 ---
 
@@ -16,10 +16,10 @@ All data is sourced from the public TCGA repository via the `TCGAbiolinks` R pac
 
 | Variable | Hazard Ratio | 95% CI | p-value |
 |---|---|---|---|
-| Age (per SD increase) | 1.84 | 1.38 – 2.44 | **< 0.001** |
-| ER positive vs negative | 0.46 | 0.25 – 0.84 | **0.011** |
-| HER2 positive vs negative | 1.82 | 0.97 – 3.43 | 0.064 |
-| Stage IV vs Stage I | 3.46 | 0.95 – 12.54 | 0.059 |
+| Age (per SD increase) | 1.84 | 1.38 - 2.44 | **< 0.001** |
+| ER positive vs negative | 0.46 | 0.25 - 0.84 | **0.011** |
+| HER2 positive vs negative | 1.82 | 0.97 - 3.43 | 0.064 |
+| Stage IV vs Stage I | 3.46 | 0.95 - 12.54 | 0.059 |
 
 **Model concordance: 0.856** (the model correctly ranks survival outcomes in 85.6% of patient pairs)
 
@@ -27,7 +27,7 @@ All data is sourced from the public TCGA repository via the `TCGAbiolinks` R pac
 
 - **Age** is a strong independent predictor of mortality. Each standard deviation increase in age at diagnosis raises the hazard of death by 84% (HR=1.84, p<0.001), after controlling for stage and receptor status.
 - **ER-positive status** is strongly protective. ER-positive patients have 54% lower hazard of death compared to ER-negative patients (HR=0.46, p=0.011). This reflects the availability of hormone-targeted therapies (e.g. tamoxifen) for ER-positive tumours.
-- **HER2-positive status** shows a trend toward worse survival (HR=1.82, p=0.064) but does not reach conventional significance in this cohort, likely because TCGA data predates widespread Herceptin (trastuzumab) use — the survival disadvantage of HER2+ disease is more muted in modern treated cohorts.
+- **HER2-positive status** shows a trend toward worse survival (HR=1.82, p=0.064) but does not reach conventional significance in this cohort, likely because TCGA data predates widespread Herceptin (trastuzumab) use - the survival disadvantage of HER2+ disease is more muted in modern treated cohorts.
 - **Stage IV** disease shows a 3.46× hazard vs Stage I (p=0.059), with wide confidence intervals reflecting the small Stage IV sample (n=20). The log-rank test across all stages is highly significant (p=2×10⁻⁶).
 
 ---
@@ -83,7 +83,7 @@ Clinical data downloaded from TCGA-BRCA using `TCGAbiolinks::GDCquery()`. Two me
 
 ### Survival analysis
 - **Kaplan-Meier curves** with log-rank tests (`survival`, `survminer`)
-- **Cox proportional hazards model** — multivariate, all covariates simultaneously (`coxph`)
+- **Cox proportional hazards model** - multivariate, all covariates simultaneously (`coxph`)
 - **Forest plot** of hazard ratios with 95% CI (`ggplot2`)
 
 ---
