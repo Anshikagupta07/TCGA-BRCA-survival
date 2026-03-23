@@ -141,4 +141,4 @@ R version 4.3+ recommended.
 ## License
 
 Data: TCGA data is publicly available under TCGA data use policy.  
-Code: MIT License — free to use and adapt with attribution.
+Code: MIT License - free to use and adapt with attribution.
