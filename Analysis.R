@@ -1,9 +1,7 @@
-# ============================================================================
 # Breast Cancer Survival Analysis — TCGA BRCA
 # Author : Anshika Gupta
 # Methods: Kaplan-Meier survival analysis + multivariate Cox regression
 # Data   : TCGA-BRCA clinical cohort (public, via TCGAbiolinks)
-# ============================================================================
 
 # libraries
 library(TCGAbiolinks)
